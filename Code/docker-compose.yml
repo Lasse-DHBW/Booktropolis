@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: streamlit run app.py
+    volumes:
+      - .:/app
+    ports:
+      - 8501:8501
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+
+volumes:
+  db-data:
