@@ -2,8 +2,6 @@
 
 Welcome to Booktropolis! This project is a virtual library management system that uses Docker, PostgreSQL, and Python. The platform provides an interactive way to manage and explore a database of books, authors, and other related entities. 
 
-[View our introduction](https://youtu.be/4d3GrayMs_o) now on Youtube!
-
 ## 🚀 Getting Started
 
 The Booktropolis project uses Docker and Docker Compose for setup and deployment. If you don't have Docker installed, please refer to the [official Docker documentation](https://docs.docker.com/get-docker/) for installation steps.
@@ -49,6 +47,6 @@ This command stops the containers and removes the volumes. Run docker-compose up
 
 #### 💻 Developer Notes
 
-This project uses PostgreSQL as the database system and psycopg2 for database connections. SQLAlchemy is also compatible but not currently implemented in this project.
+This project uses PostgreSQL as the database system and psycopg2 for database connections. SQLAlchemy is also compatible but not currently implemented in this [project](https://youtu.be/4d3GrayMs_o).
 
 Enjoy exploring Booktropolis! 🎉📚
